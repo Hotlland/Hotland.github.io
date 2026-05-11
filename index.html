@@ -3,77 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЖАРЛАНДИЯ | RolePlay</title>
+    <title>ЖАРЛАНДИЯ RP | Официальный сайт</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">ЖАРЛАНДИЯ <span>RP</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">О проекте</a></li>
-            <li><a href="#">Правила</a></li>
-        </ul>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-discord"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+        <div class="container nav-flex">
+            <div class="logo">ЖАРЛАНДИЯ <span>RP</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#features">Преимущества</a></li>
+                <li><a href="#team">Команда</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-social">
+                <a href="https://discord.gg/yourcode" class="social-link"><i class="fab fa-discord"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+            </div>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <div class="status-tag">● Мы в сети. Онлайн: 42/100</div>
-            <h1>Подключись и погрузись в настоящий RP по сети!</h1>
-            <p>Работаем на версии Minecraft 1.21.1</p>
-            <div class="hero-btns">
-                <a href="ТВОЯ_ССЫЛКА_НА_АНКЕТУ" class="btn primary">ПОДАТЬ ЗАЯВКУ</a>
-                <div class="ip-copy" onclick="copyIP()">PLAY.ZHRLANDIA.WORLD</div>
+    <header id="hero" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <div class="online-status">
+                    <span class="dot"></span> Сейчас в игре: 54 / 100 игроков
+                </div>
+                <h1>ТВОЯ ИСТОРИЯ <br> НАЧИНАЕТСЯ <span>ЗДЕСЬ</span></h1>
+                <p>Жарландия — это не просто сервер в Minecraft. Это мир, где ты можешь стать кем угодно: от законопослушного мэра до опасного лидера преступного синдиката. Уникальная экономика, проработанный лор и лучшие Жар-Бандиты ждут тебя!</p>
+                <div class="hero-actions">
+                    <a href="https://discord.gg/yourcode" class="btn btn-primary">ПОДАТЬ ЗАЯВКУ</a>
+                    <div class="copy-ip" onclick="copyIP()">
+                        <span id="ip-text">PLAY.ZHRLANDIA.WORLD</span>
+                        <i class="fas fa-copy"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero-character">
-            <img src="character.png" alt="Minecraft Character">
+            <div class="hero-image">
+                <img src="character.png" alt="Minecraft Character" class="floating">
+            </div>
         </div>
     </header>
 
-    <section class="news-section">
-        <h2 class="section-title">ПОСЛЕДНИЕ <span>НОВОСТИ</span></h2>
-        <p class="section-subtitle">новости проекта из Discord канала</p>
-        <div class="news-container">
-            <div class="news-card">
-                <div class="news-header">
-                    <span class="author">chiro39</span>
-                    <span class="date">11.05.2026</span>
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="title">ПОЧЕМУ МЫ <span>ЛУЧШИЕ?</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Быстрый старт</h3>
+                    <p>Никаких лагов и долгой загрузки. Мощное железо сервера обеспечивает стабильный FPS даже при большом онлайне.</p>
                 </div>
-                <p>На сервере открыты заявки на пост Лидера Гвардии! Ждем смелых бойцов, готовых защищать Жарландию...</p>
-            </div>
-            <div class="news-card">
-                <div class="news-header">
-                    <span class="author">admin</span>
-                    <span class="date">10.05.2026</span>
+                <div class="feature-card">
+                    <i class="fas fa-fist-raised"></i>
+                    <h3>Уникальный RP</h3>
+                    <p>Продуманные правила и опытные администраторы следят за тем, чтобы твой игровой процесс был максимально реалистичным.</p>
                 </div>
-                <p>Обновление карты: добавлены новые локации и система фракций. Теперь выживать стало еще интереснее!</p>
+                <div class="feature-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>Экономика</h3>
+                    <p>Сбалансированная система работ, бизнесов и налогов. Зарабатывай деньги своим умом или силой.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Постоянные обновы</h3>
+                    <p>Мы выпускаем технические патчи каждую неделю, добавляя новые механики и исправляя старые баги.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="vote-section">
-        <h2 class="section-title">ГОЛОСОВАНИЕ ЗА <span>ОБНОВЛЕНИЕ</span></h2>
-        <div class="roadmap">
-            <div class="vote-item">
-                <span>Новая техника</span>
-                <div class="progress-bar"><div class="fill" style="width: 46%"></div></div>
-                <span class="percent">46%</span>
-            </div>
-            <div class="vote-item">
-                <span>Система банд</span>
-                <div class="progress-bar"><div class="fill" style="width: 20%"></div></div>
-                <span class="percent">20%</span>
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="title">НАША <span>КОМАНДА</span></h2>
+            <div class="team-grid">
+                <div class="team-item">
+                    <img src="https://minotar.net/helm/Steve/100.png" alt="Admin">
+                    <h4>MartisNegr</h4>
+                    <span>Основатель</span>
+                </div>
+                <div class="team-item">
+                    <img src="https://minotar.net/helm/Alex/100.png" alt="Dev">
+                    <h4>WhitteSOFC</h4>
+                    <span>Разработчик</span>
+                </div>
+                <div class="team-item">
+                    <img src="https://minotar.net/helm/Herobrine/100.png" alt="Helper">
+                    <h4>Helper_Bot</h4>
+                    <span>Модератор</span>
+                </div>
             </div>
         </div>
     </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="title">ОСТАЛИСЬ <span>ВОПРОСЫ?</span></h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>Как зайти на сервер?</h3>
+                    <p>Скопируйте наш IP, зайдите в Minecraft версии 1.21.1 и добавьте нас в список серверов.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Нужна ли лицензия?</h3>
+                    <p>Нет, наш сервер доступен как для обладателей лицензии, так и для тех, кто играет через TLauncher.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Где подать заявку?</h3>
+                    <p>Все заявки на проходку принимаются исключительно в нашем Discord-канале в разделе #анкеты.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-flex">
+            <div class="footer-info">
+                <h3>ЖАРЛАНДИЯ <span>RP</span></h3>
+                <p>&copy; 2026 Все права защищены. Проект не связан с Mojang AB.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Договор оферты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
