@@ -1,34 +1,15 @@
-/* ЖАРЛАНДИЯ RP - OFFICIAL STYLESHEET 
-    VERSION: 2.0 (PC OPTIMIZED)
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-:root {
-    --primary: #ff8c00;
-    --primary-alt: #ff4500;
-    --bg-dark: #0a0b10;
-    --bg-light: #161822;
-    --text: #ffffff;
-    --text-dim: #a0a0a0;
-    --accent: #5566ff;
-    --white: #ffffff;
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-/* ОСНОВНОЙ СБРОС */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
-html { scroll-behavior: smooth; }
-
 body {
-    background-color: var(--bg-dark);
-    color: var(--text);
+    font-family: 'Montserrat', sans-serif;
+    background-color: #0d0d0d;
+    color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -39,167 +20,89 @@ body {
     padding: 0 20px;
 }
 
-/* ШАПКА (NAVBAR) */
-.navbar {
-    height: 90px;
-    background: rgba(10, 11, 16, 0.95);
+span { color: #ff8c00; }
+
+/* Навигация */
+nav {
+    height: 80px;
     display: flex;
     align-items: center;
+    background: rgba(13, 13, 13, 0.9);
     position: fixed;
+    width: 100%;
     top: 0;
-    width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
 }
 
-.nav-flex {
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-.logo span { color: var(--primary); }
+.logo { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
+.nav-links { display: flex; list-style: none; }
+.nav-links li { margin: 0 20px; }
+.nav-links a { text-decoration: none; color: #fff; font-weight: 700; transition: 0.3s; }
+.nav-links a:hover { color: #ff8c00; }
+.socials i { font-size: 1.5rem; color: #5865F2; }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: var(--transition);
-    opacity: 0.7;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-    opacity: 1;
-}
-
-/* ГЛАВНЫЙ ЭКРАН */
+/* Hero Section */
 .hero {
-    padding-top: 180px;
-    padding-bottom: 100px;
-    min-height: 100vh;
-    background: radial-gradient(circle at 10% 50%, rgba(255, 140, 0, 0.1), transparent 50%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+    background: radial-gradient(circle at top right, rgba(255,140,0,0.1), transparent);
 }
 
-.hero-grid {
+.hero-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 60px;
 }
 
-.hero-text { flex: 1.2; }
-.hero-image { flex: 0.8; position: relative; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-text p { font-size: 1.1rem; color: #aaa; margin-bottom: 30px; max-width: 500px; }
 
-.status-online {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(76, 175, 80, 0.1);
-    color: #4caf50;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    border: 1px solid rgba(76, 175, 80, 0.2);
-}
-
-.status-online::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #4caf50;
-    border-radius: 50%;
-    margin-right: 10px;
-    box-shadow: 0 0 10px #4caf50;
-}
-
-h1 {
-    font-size: 4.5rem;
-    font-weight: 900;
-    line-height: 1.1;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-h1 span { 
-    background: linear-gradient(90deg, var(--primary), #ffc107);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    color: var(--text-dim);
-    margin-bottom: 40px;
-    max-width: 600px;
-}
-
-/* КНОПКИ */
-.hero-btns {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.btn {
-    padding: 20px 40px;
-    border-radius: 15px;
+.hero-btns { display: flex; align-items: center; gap: 20px; }
+.btn-primary {
+    background: #ff8c00;
+    color: #fff;
+    padding: 15px 30px;
     text-decoration: none;
     font-weight: 900;
-    text-transform: uppercase;
-    transition: var(--transition);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,140,0,0.3); }
+
+.ip-copy {
+    background: rgba(255,255,255,0.05);
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px dashed #444;
 }
 
-.btn-primary {
-    background: linear-gradient(45deg, var(--primary), var(--primary-alt));
-    color: white;
-    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3);
+.hero-image img {
+    max-width: 450px;
+    filter: drop-shadow(0 0 30px rgba(255,140,0,0.2));
 }
 
-.btn-primary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.5);
+.floating {
+    animation: float 4s ease-in-out infinite;
 }
 
-.ip-copy-box {
-    background: var(--bg-light);
-    padding: 20px 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,255,255,0.05);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
-.ip-copy-box:hover { border-color: var(--primary); }
-
-/* КАРТОЧКИ ПРЕИМУЩЕСТВ (О ПРОЕКТЕ) */
-.features { padding: 120px 0; background: #0c0d15; }
-
-.section-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.section-header h2 { font-size: 3rem; text-transform: uppercase; }
-.section-header h2 span { color: var(--accent); }
+/* Features */
+.features { padding: 100px 0; background: #111; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
 
 .features-grid {
     display: grid;
@@ -207,93 +110,52 @@ h1 span {
     gap: 30px;
 }
 
-.f-card {
-    background: var(--bg-light);
-    padding: 50px;
-    border-radius: 30px;
-    border: 1px solid rgba(255,255,255,0.03);
-    transition: var(--transition);
-}
-
-.f-card:hover {
-    transform: translateY(-15px);
-    border-color: var(--accent);
-    background: #1c1f2b;
-}
-
-.f-card i {
-    font-size: 3rem;
-    color: var(--accent);
-    margin-bottom: 30px;
-}
-
-/* НОВОСТИ (БЕЛЫЕ КАРТОЧКИ КАК НА СКРИНЕ) */
-.news { padding: 100px 0; }
-.news-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.n-card {
-    background: var(--white);
-    color: #333;
+.feature-card {
+    background: #1a1a1a;
     padding: 40px;
-    border-radius: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+    border: 1px solid #222;
 }
 
-.n-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    font-weight: 800;
-    color: var(--accent);
-}
+.feature-card:hover { border-color: #ff8c00; transform: translateY(-10px); }
+.feature-card i { font-size: 2.5rem; color: #ff8c00; margin-bottom: 20px; }
+.feature-card h3 { margin-bottom: 15px; }
+.feature-card p { color: #888; }
 
-/* FAQ / ВОПРОСЫ */
-.faq-box {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
+/* FAQ */
+.faq { padding: 100px 0; }
 .faq-item {
-    background: var(--bg-light);
-    padding: 30px;
-    border-radius: 20px;
+    background: #1a1a1a;
+    padding: 25px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
+.faq-item h3 { color: #ff8c00; margin-bottom: 10px; }
 
-.faq-item h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
-
-/* ФУТЕР */
-.footer {
-    padding: 80px 0;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    background: #050608;
+/* Footer */
+footer {
+    padding: 40px 0;
+    border-top: 1px solid #222;
+    background: #0d0d0d;
 }
 
-.footer-flex {
+.footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: #666;
+    font-size: 0.9rem;
 }
 
-/* АНИМАЦИЯ ПЕРСОНАЖА */
-.floating-img {
-    width: 100%;
-    filter: drop-shadow(0 0 50px rgba(255, 140, 0, 0.2));
-    animation: floating 5s ease-in-out infinite;
-}
+.footer-links a { color: #888; text-decoration: none; margin-left: 20px; }
+.footer-links a:hover { color: #fff; }
 
-@keyframes floating {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-30px) rotate(2deg); }
-}
-
-/* МОБИЛЬНАЯ АДАПТАЦИЯ */
-@media (max-width: 1024px) {
-    h1 { font-size: 3rem; }
-    .hero-grid { flex-direction: column; text-align: center; }
+/* Mobile */
+@media (max-width: 900px) {
+    .hero-container { flex-direction: column; text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
     .hero-btns { flex-direction: column; }
+    .hero-image { margin-top: 50px; }
     .nav-links { display: none; }
 }
