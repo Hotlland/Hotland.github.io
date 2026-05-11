@@ -88,6 +88,39 @@
             </div>
         </div>
     </footer>
+<script>
+// 1. Анимация появления элементов при скролле (Reveal Effect)
+const observerOptions = {
+    threshold: 0.1 // Сработает, когда 10% блока покажется на экране
+};
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+}, observerOptions);
+
+// Находим все карточки, заголовки и вопросы FAQ
+document.querySelectorAll('.feature-card, .faq-item, .section-title, .hero-text, .hero-image').forEach((el) => {
+    el.classList.add('hidden'); // Прячем изначально
+    observer.observe(el); // Начинаем слежку
+});
+
+// 2. Интерактивная шапка (меняет прозрачность при прокрутке)
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+        nav.style.background = 'rgba(13, 13, 13, 0.98)';
+        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        nav.style.height = '70px'; // Немного сужаем при скролле
+    } else {
+        nav.style.background = 'rgba(13, 13, 13, 0.8)';
+        nav.style.boxShadow = 'none';
+        nav.style.height = '80px';
+    }
+});
+</script>
 </body>
 </html>
