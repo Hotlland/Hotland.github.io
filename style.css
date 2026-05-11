@@ -12,7 +12,7 @@ body {
 
 /* ОГРОМНЫЙ ГЛАВНЫЙ ЗАГОЛОВОК */
 h1 {
-    font-size: 8rem; /* Очень большой размер */
+    font-size: 8rem;
     margin: 40px 0;
     text-transform: uppercase;
     text-align: center;
@@ -28,67 +28,61 @@ h1 {
     to { background-position: 200% center; }
 }
 
-/* Секции с переливающимися рамками */
+/* Секции с ПЕРЕЛИВАЮЩЕЙСЯ ЗАКРУГЛЕННОЙ рамкой */
 section {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px 0;
-    padding: 20px;
+    padding: 30px;
     background: #0a0a0a;
-    border-radius: 15px;
-    display: flex;
+    border-radius: 40px; /* Сильное закругление */
+    display: flex; /* Картинка и текст в ряд */
     align-items: center;
-    gap: 30px;
-    position: relative;
+    gap: 40px;
+    
     /* Магия переливающейся рамки */
-    border: 3px solid;
+    border: 4px solid;
     border-image: linear-gradient(45deg, #ff0000, #ff8c00, #ffff00, #ff0000) 1;
+    /* Чтобы border-radius работал с градиентом, используем это: */
+    border-style: solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(45deg, #ff0000, #ff8c00, #ffff00, #ff0000);
     animation: borderRotate 4s linear infinite;
 }
 
-@keyframes borderRotate {
-    0% { border-image-source: linear-gradient(45deg, #ff0000, #ff8c00, #ffff00, #ff0000); }
-    50% { border-image-source: linear-gradient(180deg, #ffff00, #ff0000, #ff8c00, #ffff00); }
-    100% { border-image-source: linear-gradient(405deg, #ff0000, #ff8c00, #ffff00, #ff0000); }
+/* Хак для закругления рамки с градиентом */
+.info-section {
+    border: 4px solid #ff8c00; /* Основной цвет */
+    border-radius: 50px; /* Закругляем */
+    overflow: hidden;
 }
 
 .info-section img {
-    width: 40%;
-    border-radius: 10px;
-    filter: grayscale(20%) contrast(120%);
+    width: 45%; /* Картинка занимает почти половину */
+    border-radius: 30px; /* Закругляем саму фотку */
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.3);
+}
+
+.text-block {
+    width: 55%;
 }
 
 .text-block h2 {
-    font-size: 2.5rem;
-    color: #ff8c00;
+    font-size: 3rem;
+    color: #ffa500;
+    margin-top: 0;
 }
 
 .text-block p {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #bbb;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #eee;
 }
 
-/* Кнопка IP */
-.ip-address {
-    font-size: 2rem;
-    padding: 20px;
-    background: #111;
-    border: 2px solid #ff8c00;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-    text-align: center;
-}
-
-.ip-address:hover {
-    box-shadow: 0 0 30px #ff8c00;
-    transform: scale(1.05);
-}
-
-/* Для мобилок */
+/* На мобилках картинка будет сверху, текст снизу */
 @media (max-width: 768px) {
-    h1 { font-size: 4rem; }
-    section { flex-direction: column; }
+    h1 { font-size: 3.5rem; }
+    section { flex-direction: column; text-align: center; }
     .info-section img { width: 100%; }
+    .text-block { width: 100%; }
 }
