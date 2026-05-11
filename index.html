@@ -3,109 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЖАРЛАНДИЯ | Официальный сайт</title>
-    <style>
-        /* CSS — Оформление */
-        body {
-            background-color: #0f0f0f;
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            /* Анимация градиента как в твоем ТАБе */
-            background: linear-gradient(90deg, #FF8C00, #FFA500, #FFFF00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.5));
-            animation: burn 2s infinite alternate;
-        }
-
-        @keyframes burn {
-            from { transform: scale(1); filter: drop-shadow(0 0 10px #FF8C00); }
-            to { transform: scale(1.05); filter: drop-shadow(0 0 20px #FFFF00); }
-        }
-
-        .server-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #FF8C00;
-            backdrop-filter: blur(10px);
-            text-align: center;
-        }
-
-        .ip-address {
-            font-family: monospace;
-            font-size: 1.5rem;
-            color: #FFA500;
-            background: #222;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            border: 1px dashed #FFFF00;
-        }
-
-        .ip-address:hover {
-            background: #FF8C00;
-            color: black;
-        }
-
-        .status {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #aaa;
-        }
-
-        .copy-hint {
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 5px;
-        }
-    </style>
+    <title>ЖАРЛАНДИЯ | О проекте</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="server-box">
-        <h1>ЖАРЛАНДИЯ</h1>
-        <p>Выживание, которое согревает!</p>
-        
-        <div class="ip-address" id="ipServer" onclick="copyIP()">ZHRLANDIA.WORLD</div>
-        <div class="copy-hint">Нажми, чтобы скопировать IP</div>
-
-        <div class="status">
-            Версия: <b>1.21.1</b>
+    <section class="hero">
+        <div class="server-box">
+            <h1>ЖАРЛАНДИЯ</h1>
+            <p>Выживание, которое согревает!</p>
+            <div class="ip-address" onclick="copyIP()">ZHRLANDIA.WORLD</div>
+            <div class="copy-hint">Нажми, чтобы скопировать IP</div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        /* JavaScript — Функционал */
-        function copyIP() {
-            const ip = document.getElementById('ipServer').innerText;
-            navigator.clipboard.writeText(ip).then(() => {
-                const hint = document.querySelector('.copy-hint');
-                hint.innerText = "IP СКОПИРОВАН!";
-                hint.style.color = "#FFFF00";
-                
-                setTimeout(() => {
-                    hint.innerText = "Нажми, чтобы скопировать IP";
-                    hint.style.color = "#666";
-                }, 2000);
-            });
-        }
-    </script>
+    <section class="info-section">
+        <img src="foto1.jpg" alt="Жарландия">
+        <div class="text-block">
+            <h2>Мир Жарландии</h2>
+            <p>Тут напиши много текста про спавн, природу и атмосферу. Наша Жарландия — это место, где каждый блок пропитан теплом, а приключения ждут за каждым углом. Мы создали уникальный ландшафт, который не оставит тебя равнодушным.</p>
+        </div>
+    </section>
 
+    <section class="info-section reverse">
+        <img src="foto2.jpg" alt="Игроки">
+        <div class="text-block">
+            <h2>Наши Жар-Бандиты</h2>
+            <p>Наши игроки — это сердце сервера. Мы называем их Жар-Бандитами, потому что они дерзкие, смелые и всегда готовы к экшену. Здесь ты найдешь верных друзей, создашь мощный клан и покажешь всем, кто тут главный в пвп!</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <img src="foto3.jpg" alt="Кто на сервере">
+        <div class="text-block">
+            <h2>Кто сейчас в игре?</h2>
+            <p>У нас всегда движуха! От простых работяг-фермеров до суровых админов и топовых донатеров. Каждый вносит свой вклад в историю сервера. Заходи и ты, чтобы занять свое место в таблице лидеров и стать легендой Жарландии.</p>
+        </div>
+    </section>
+
+    <section class="info-section reverse">
+        <img src="foto4.jpg" alt="Галерея">
+        <div class="text-block">
+            <h2>Присоединяйся!</h2>
+            <p>Хватит смотреть на скриншоты — пора заходить и строить свою историю. Жарландия ждет только тебя. Мы постоянно обновляем карты, добавляем крутые плагины и следим за порядком, чтобы твоя игра была максимально комфортной.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
