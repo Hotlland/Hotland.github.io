@@ -176,3 +176,20 @@ footer {
 nav {
     transition: all 0.3s ease;
 }
+.online-status {
+    margin-top: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    background: #555;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,255,0,0.2);
+    display: inline-block;
+}
