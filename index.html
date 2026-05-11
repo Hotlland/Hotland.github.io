@@ -3,49 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ЖАРЛАНДИЯ | О проекте</title>
+    <title>ЖАРЛАНДИЯ | RolePlay</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <section class="hero">
-        <div class="server-box">
-            <h1>ЖАРЛАНДИЯ</h1>
-            <p>Выживание, которое согревает!</p>
-            <div class="ip-address" onclick="copyIP()">ZHRLANDIA.WORLD</div>
-            <div class="copy-hint">Нажми, чтобы скопировать IP</div>
+    <nav class="navbar">
+        <div class="logo">ЖАРЛАНДИЯ <span>RP</span></div>
+        <ul class="nav-links">
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О проекте</a></li>
+            <li><a href="#">Правила</a></li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-discord"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="status-tag">● Мы в сети. Онлайн: 42/100</div>
+            <h1>Подключись и погрузись в настоящий RP по сети!</h1>
+            <p>Работаем на версии Minecraft 1.21.1</p>
+            <div class="hero-btns">
+                <a href="ТВОЯ_ССЫЛКА_НА_АНКЕТУ" class="btn primary">ПОДАТЬ ЗАЯВКУ</a>
+                <div class="ip-copy" onclick="copyIP()">PLAY.ZHRLANDIA.WORLD</div>
+            </div>
+        </div>
+        <div class="hero-character">
+            <img src="character.png" alt="Minecraft Character">
+        </div>
+    </header>
+
+    <section class="news-section">
+        <h2 class="section-title">ПОСЛЕДНИЕ <span>НОВОСТИ</span></h2>
+        <p class="section-subtitle">новости проекта из Discord канала</p>
+        <div class="news-container">
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="author">chiro39</span>
+                    <span class="date">11.05.2026</span>
+                </div>
+                <p>На сервере открыты заявки на пост Лидера Гвардии! Ждем смелых бойцов, готовых защищать Жарландию...</p>
+            </div>
+            <div class="news-card">
+                <div class="news-header">
+                    <span class="author">admin</span>
+                    <span class="date">10.05.2026</span>
+                </div>
+                <p>Обновление карты: добавлены новые локации и система фракций. Теперь выживать стало еще интереснее!</p>
+            </div>
         </div>
     </section>
 
-    <section class="info-section">
-        <img src="foto1.jpg" alt="Жарландия">
-        <div class="text-block">
-            <h2>Мир Жарландии</h2>
-            <p>Тут напиши много текста про спавн, природу и атмосферу. Наша Жарландия — это место, где каждый блок пропитан теплом, а приключения ждут за каждым углом. Мы создали уникальный ландшафт, который не оставит тебя равнодушным.</p>
-        </div>
-    </section>
-
-    <section class="info-section reverse">
-        <img src="foto2.jpg" alt="Игроки">
-        <div class="text-block">
-            <h2>Наши Жар-Бандиты</h2>
-            <p>Наши игроки — это сердце сервера. Мы называем их Жар-Бандитами, потому что они дерзкие, смелые и всегда готовы к экшену. Здесь ты найдешь верных друзей, создашь мощный клан и покажешь всем, кто тут главный в пвп!</p>
-        </div>
-    </section>
-
-    <section class="info-section">
-        <img src="foto3.jpg" alt="Кто на сервере">
-        <div class="text-block">
-            <h2>Кто сейчас в игре?</h2>
-            <p>У нас всегда движуха! От простых работяг-фермеров до суровых админов и топовых донатеров. Каждый вносит свой вклад в историю сервера. Заходи и ты, чтобы занять свое место в таблице лидеров и стать легендой Жарландии.</p>
-        </div>
-    </section>
-
-    <section class="info-section reverse">
-        <img src="foto4.jpg" alt="Галерея">
-        <div class="text-block">
-            <h2>Присоединяйся!</h2>
-            <p>Хватит смотреть на скриншоты — пора заходить и строить свою историю. Жарландия ждет только тебя. Мы постоянно обновляем карты, добавляем крутые плагины и следим за порядком, чтобы твоя игра была максимально комфортной.</p>
+    <section class="vote-section">
+        <h2 class="section-title">ГОЛОСОВАНИЕ ЗА <span>ОБНОВЛЕНИЕ</span></h2>
+        <div class="roadmap">
+            <div class="vote-item">
+                <span>Новая техника</span>
+                <div class="progress-bar"><div class="fill" style="width: 46%"></div></div>
+                <span class="percent">46%</span>
+            </div>
+            <div class="vote-item">
+                <span>Система банд</span>
+                <div class="progress-bar"><div class="fill" style="width: 20%"></div></div>
+                <span class="percent">20%</span>
+            </div>
         </div>
     </section>
 
