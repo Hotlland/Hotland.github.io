@@ -86,3 +86,15 @@ section {
     .info-section img { width: 100%; }
     .text-block { width: 100%; }
 }
+/* Начальное состояние: блок прозрачный и чуть ниже своего места */
+.info-section {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9); /* Смещен вниз и чуть уменьшен */
+    transition: all 0.8s ease-out; /* Плавность появления */
+}
+
+/* Состояние, когда блок стал видимым */
+.info-section.show {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Возвращается на место */
+}
