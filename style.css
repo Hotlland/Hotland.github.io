@@ -1,69 +1,44 @@
-/* Основной фон с эффектом глубины */
-body {
-    background: radial-gradient(circle, #2c0a00 0%, #000000 100%);
-    color: white;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+/* Общие стили для длинной страницы */
+section {
+    padding: 80px 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
 }
 
-/* Огненный заголовок */
-h1 {
-    font-size: 5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    background: linear-gradient(0deg, #ff4500 0%, #ffa500 50%, #ffff00 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(255, 69, 0, 0.8));
-    animation: flicker 1.5s infinite alternate;
-}
+.hero { height: 100vh; } /* Первый экран на всю высоту */
 
-/* Анимация мерцания огня */
-@keyframes flicker {
-    0% { transform: scale(1); filter: drop-shadow(0 0 10px #ff4500); }
-    100% { transform: scale(1.02); filter: drop-shadow(0 0 25px #ff8c00); opacity: 0.9; }
-}
-
-/* Карточка сервера */
-.server-box {
-    background: rgba(20, 20, 20, 0.8);
-    border: 2px solid #ff8c00;
-    padding: 40px;
+.info-section img {
+    width: 45%;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(255, 140, 0, 0.2);
-    text-align: center;
-    backdrop-filter: blur(5px);
+    border: 3px solid #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-/* Кнопка IP */
-.ip-address {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #fff;
-    background: #441100;
-    padding: 15px 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid #ff4500;
-    margin: 20px 0;
+.text-block { width: 50%; }
+
+.text-block h2 {
+    color: #ffa500;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-.ip-address:hover {
-    background: #ff4500;
-    box-shadow: 0 0 20px #ff4500;
-    transform: translateY(-3px);
-}
-
-/* Текст статуса */
-.status {
+.text-block p {
     font-size: 1.2rem;
-    color: #ffcc00;
-    letter-spacing: 2px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Чтобы блоки чередовались (картинка слева / картинка справа) */
+.reverse { flex-direction: row-reverse; }
+
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+    section { flex-direction: column; text-align: center; }
+    .info-section img, .text-block { width: 100%; }
+    h1 { font-size: 3rem; }
 }
