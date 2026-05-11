@@ -159,3 +159,20 @@ footer {
     .hero-image { margin-top: 50px; }
     .nav-links { display: none; }
 }
+/* Базовое состояние для анимации */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+/* Состояние при появлении */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Плавный переход для высоты шапки */
+nav {
+    transition: all 0.3s ease;
+}
