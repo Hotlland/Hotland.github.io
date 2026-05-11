@@ -1,49 +1,44 @@
-// Функция для копирования IP адреса
-function copyIP() {
-    // Находим текст IP
-    const ipText = "ZHRLANDIA.WORLD";
-    
-    // Копируем в буфер обмена
-    navigator.clipboard.writeText(ipText).then(() => {
-        // Находим элемент подсказки
-        const hint = document.querySelector('.copy-hint');
-        
-        // Меняем текст на подтверждение
-        const originalText = hint.innerText;
-        hint.innerText = "✅ IP СКОПИРОВАН!";
-        hint.style.color = "#ffff00";
-        hint.style.fontWeight = "bold";
-
-        // Возвращаем текст назад через 2 секунды
-        setTimeout(() => {
-            hint.innerText = originalText;
-            hint.style.color = "";
-            hint.style.fontWeight = "";
-        }, 2000);
-    }).catch(err => {
-        console.error('Ошибка копирования: ', err);
-    });
+/* Общие стили для длинной страницы */
+section {
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
 }
 
-// Динамическое приветствие (меняется само)
-function updateGreeting() {
-    const hour = new Date().getHours();
-    const statusElement = document.querySelector('.status');
-    let greeting = "";
+.hero { height: 100vh; } /* Первый экран на всю высоту */
 
-    if (hour >= 5 && hour < 12) greeting = "Доброе утро! Жарландия уже проснулась.";
-    else if (hour >= 12 && hour < 18) greeting = "Добрый день! Самое время для выживания.";
-    else if (hour >= 18 && hour < 23) greeting = "Добрый вечер! Костры в Жарландии горят ярко.";
-    else greeting = "Доброй ночи! Ночные монстры не спят...";
-
-    // Добавляем приветствие перед версией
-    const greetingDiv = document.createElement('div');
-    greetingDiv.style.marginTop = "10px";
-    greetingDiv.style.fontSize = "0.9rem";
-    greetingDiv.style.color = "#ffa500";
-    greetingDiv.innerText = greeting;
-    statusElement.appendChild(greetingDiv);
+.info-section img {
+    width: 45%;
+    border-radius: 20px;
+    border: 3px solid #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-// Запускаем приветствие при загрузке страницы
-window.onload = updateGreeting;
+.text-block { width: 50%; }
+
+.text-block h2 {
+    color: #ffa500;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.text-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* Чтобы блоки чередовались (картинка слева / картинка справа) */
+.reverse { flex-direction: row-reverse; }
+
+/* Адаптация для телефонов */
+@media (max-width: 768px) {
+    section { flex-direction: column; text-align: center; }
+    .info-section img, .text-block { width: 100%; }
+    h1 { font-size: 3rem; }
+}
