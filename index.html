@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЦИТРОН RP — Сезон Первый</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Particle canvas background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Crystal decorations -->
+    <div class="crystal-bg">
+        <div class="crystal c1"></div>
+        <div class="crystal c2"></div>
+        <div class="crystal c3"></div>
+        <div class="crystal c4"></div>
+        <div class="crystal c5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <div class="logo">ЦИТРОН <span>RP</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">О проекте</a></li>
+                <li><a href="#features">Преимущества</a></li>
+                <li><a href="#stats">Статистика</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="https://discord.gg/E8feB8sP5c" target="_blank" class="discord-btn">
+                    <i class="fab fa-discord"></i> Discord
+                </a>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#about">О проекте</a>
+            <a href="#features">Преимущества</a>
+            <a href="#stats">Статистика</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://discord.gg/E8feB8sP5c" target="_blank">Discord</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-glow"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-text reveal">
+                <div class="hero-badge">
+                    <span class="status-dot animated"></span>
+                    СЕЗОН ПЕРВЫЙ · ДАВНЕЕ ПРОШЛОЕ
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-citron">ЦИТРОН</span>
+                    <span class="title-sub">ROLEPLAY</span>
+                    <span class="title-season">СЕЗОН <em>I</em></span>
+                </h1>
+                <p>Погрузись в тёмный мир Давнего Прошлого. Кристаллы силы, тайные фракции и нескончаемые войны за власть. Твоя история начинается здесь.</p>
+                <div class="hero-btns">
+                    <a href="https://discord.gg/E8feB8sP5c" class="btn-primary">
+                        <i class="fab fa-discord"></i> ПОДАТЬ ЗАЯВКУ
+                    </a>
+                    <div class="ip-copy" id="ipBox" onclick="copyIP()" title="Нажми, чтобы скопировать IP">
+                        <i class="fas fa-server"></i>
+                        <div class="ip-info">
+                            <span class="ip-label">Адрес сервера</span>
+                            <span class="ip-address">hotland.falix.pro</span>
+                        </div>
+                        <i class="fas fa-copy ip-copy-icon"></i>
+                    </div>
+                </div>
+                <div class="online-status">
+                    <span class="status-dot" id="statusDot"></span>
+                    Онлайн: <strong id="player-count">загрузка...</strong>
+                </div>
+            </div>
+            <div class="hero-image reveal-right">
+                <div class="crystal-ring ring-1"></div>
+                <div class="crystal-ring ring-2"></div>
+                <div class="crystal-ring ring-3"></div>
+                <div class="crystal-cluster">
+                    <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg" class="crystal-svg floating">
+                        <!-- Large center crystal -->
+                        <polygon points="150,20 190,120 170,300 130,300 110,120" fill="url(#crystalGrad1)" opacity="0.9"/>
+                        <!-- Left crystal -->
+                        <polygon points="100,60 125,140 115,280 85,280 75,140" fill="url(#crystalGrad2)" opacity="0.75"/>
+                        <!-- Right crystal -->
+                        <polygon points="200,80 225,155 210,270 185,270 175,155" fill="url(#crystalGrad2)" opacity="0.75"/>
+                        <!-- Small left -->
+                        <polygon points="60,120 80,175 72,240 52,240 44,175" fill="url(#crystalGrad3)" opacity="0.6"/>
+                        <!-- Small right -->
+                        <polygon points="240,100 260,165 250,235 232,235 222,165" fill="url(#crystalGrad3)" opacity="0.6"/>
+                        <!-- Glow effects -->
+                        <ellipse cx="150" cy="310" rx="90" ry="12" fill="url(#glowBase)" opacity="0.8"/>
+                        <defs>
+                            <linearGradient id="crystalGrad1" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#a8f7ff"/>
+                                <stop offset="40%" stop-color="#00d4f5"/>
+                                <stop offset="100%" stop-color="#003d5c"/>
+                            </linearGradient>
+                            <linearGradient id="crystalGrad2" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#7ef5ff"/>
+                                <stop offset="50%" stop-color="#00b8d9"/>
+                                <stop offset="100%" stop-color="#002a40"/>
+                            </linearGradient>
+                            <linearGradient id="crystalGrad3" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#5ee8f5"/>
+                                <stop offset="100%" stop-color="#001f30"/>
+                            </linearGradient>
+                            <radialGradient id="glowBase">
+                                <stop offset="0%" stop-color="#00d4f5" stop-opacity="0.6"/>
+                                <stop offset="100%" stop-color="#00d4f5" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Листай вниз</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <h2 class="section-title left">О <span>ПРОЕКТЕ</span></h2>
+                    <p>ЦИТРОН RP — это Minecraft ролевой сервер с глубоким лором Давнего Прошлого. Здесь ты не просто играешь — ты создаёшь историю целого мира.</p>
+                    <p>Стань искателем кристаллов, вступи в тайное братство или подними собственную армию. Первый сезон только начинается.</p>
+                    <div class="about-tags">
+                        <span class="tag"><i class="fas fa-gem"></i> Кристаллы</span>
+                        <span class="tag"><i class="fas fa-users"></i> Фракции</span>
+                        <span class="tag"><i class="fas fa-star"></i> Уникально</span>
+                        <span class="tag"><i class="fas fa-bolt"></i> Активно</span>
+                    </div>
+                </div>
+                <div class="about-cards reveal">
+                    <div class="mini-card">
+                        <i class="fas fa-dungeon"></i>
+                        <div>
+                            <strong>Тёмные подземелья</strong>
+                            <p>Исследуй заброшенные шахты и скрытые руины Давнего Прошлого</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-gem"></i>
+                        <div>
+                            <strong>Кристальная экономика</strong>
+                            <p>Добывай, торгуй и создавай артефакты из редких кристаллов</p>
+                        </div>
+                    </div>
+                    <div class="mini-card">
+                        <i class="fas fa-users-cog"></i>
+                        <div>
+                            <strong>Фракции и кланы</strong>
+                            <p>Вступай в могущественные ордены или создай собственный</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="features-bg"></div>
+        <div class="container">
+            <h2 class="section-title reveal">ПОЧЕМУ МЫ <span>ЛУЧШИЕ?</span></h2>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Быстрый старт</h3>
+                    <p>Никаких лагов. Мощное железо обеспечивает стабильный FPS даже при большом онлайне.</p>
+                    <div class="card-line"></div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Кристальная экономика</h3>
+                    <p>Сбалансированная система добычи, обмена и крафта артефактов. Богатей своим умом.</p>
+                    <div class="card-line"></div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Честный RolePlay</h3>
+                    <p>Строгие правила и адекватная администрация следят за порядком 24/7.</p>
+                    <div class="card-line"></div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Огромный мир</h3>
+                    <p>Просторная карта с городами, пустошами, секретными пещерами и постоянными обновлениями.</p>
+                    <div class="card-line"></div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Ивенты и события</h3>
+                    <p>Регулярные турниры, сезонные ивенты и уникальные задания от администрации.</p>
+                    <div class="card-line"></div>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Наша команда всегда на связи. Discord, тикеты, быстрые ответы на любые вопросы.</p>
+                    <div class="card-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+                    <p>Игроков зарегистрировано</p>
+                </div>
+                <div class="stat-item reveal">
+                    <span class="stat-number" data-target="8">0</span><span class="stat-suffix">/7</span>
+                    <p>Дней в неделю</p>
+                </div>
+                <div class="stat-item reveal">
+                    <span class="stat-number" data-target="99">0</span><span class="stat-suffix">%</span>
+                    <p>Аптайм сервера</p>
+                </div>
+                <div class="stat-item reveal">
+                    <span class="stat-number" data-target="12">0</span><span class="stat-suffix">+</span>
+                    <p>Уникальных механик</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title reveal">ЧАСТО ЗАДАВАЕМЫЕ <span>ВОПРОСЫ</span></h2>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Как зайти на сервер?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Скопируй наш IP <strong>hotland.falix.pro</strong>, зайди в Minecraft 1.21.1 и добавь нас в список серверов. Готово!</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Нужна ли лицензия?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Нет! Наш сервер доступен как для обладателей лицензии, так и для игроков с TLauncher и других лаунчеров.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Есть ли донат или Pay-to-Win?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>У нас нет Pay-to-Win механик. Донат — это исключительно косметика и удобство, без влияния на игровой баланс.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Как вступить в Discord?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Нажми на кнопку «Discord» в шапке сайта или в любом блоке с призывом к действию. Там ты найдёшь всё необходимое и сможешь подать заявку.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Что такое «Давнее Прошлое»?</span>
+                        <i class="fas fa-plus faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Это уникальный лор первого сезона ЦИТРОН RP. Эпоха, когда кристаллы только появились в мире и великие цивилизации боролись за их контроль.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-glow"></div>
+        <div class="container">
+            <div class="cta-content reveal">
+                <div class="season-badge">СЕЗОН ПЕРВЫЙ</div>
+                <h2>ГОТОВ НАЧАТЬ <span>СВОЁ ПРИКЛЮЧЕНИЕ?</span></h2>
+                <p>Тысячи игроков уже пишут свою историю. Твоя — следующая.</p>
+                <a href="https://discord.gg/E8feB8sP5c" class="btn-primary large">
+                    <i class="fab fa-discord"></i> ВСТУПИТЬ В DISCORD
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">ЦИТРОН <span>RP</span></div>
+            <p class="footer-copy">&copy; 2026 Цитрон RP. Все права защищены. Не связано с Mojang AB.</p>
+            <div class="footer-links">
+                <a href="#">Договор оферты</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i> IP скопирован!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
